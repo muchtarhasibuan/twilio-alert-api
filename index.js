@@ -19,7 +19,7 @@ app.post('/alert', async (req, res) => {
     return res.status(400).send('Missing parameters');
   }
 
-  const message = `🚨 PERINGATAN !!! Suhu = ${suhu}°C, Asap = ${asap}`;
+  const message = `🚨 PERINGATAN: Suhu = ${suhu}°C, Asap = ${asap}`;
 
   try {
     await client.messages.create({
@@ -36,7 +36,7 @@ app.post('/alert', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Twilio Alert API is running!');
+  res.send('🔥 Twilio Alert API is live on Glitch!');
 });
 
 app.listen(port, () => {
